@@ -1,5 +1,5 @@
 <label class="title">Find any <span>country</span> in the world.</label>
-<img class="img-bg" src="../../../assets/Rectangle 300.png">
+<img class="img-bg" src="https://s3-alpha-sig.figma.com/img/14cf/8738/d87d84c21b318297becaea64af3a7256?Expires=1623628800&Signature=X3vEV~V3qiSSLIZ4IMugbvyPbsjQ7x3NUXhpRASnwGTm6bgtcqU0VCyybQayXUZq6lardQnGBgb5VleP0OahbmBE-CF2owZT283IwH02sA4EP65ftOY6IPKVT0DklPfHwYcjruvicX6Zhq5ixSfDtXdoCP5ODgio8rBRNJc43s0qlWM5tD0NQNm13qzmdrO1c8mhLq4nQ6gb-E7ERIWpc3ylrkSslJIWybXyIXQpg5wyPAZ3HhYeDISVMAw75TopWz~tHYQJK6kPpvQnj~9nYIESWrInGwEhxCJg~2pJUB7x4RjPEc4puh8Lwi46mv0oYl-uXv1~IOUwK6nROTZgjA__&Key-Pair-Id=APKAINTVSUGEWH5XD5UA">
 <div class="txt-filter">
   <input class="" type="text" placeholder="Search country" [(ngModel)]="filterName">
   <select [(ngModel)]="selectFilter">
@@ -12,7 +12,8 @@
       <option value="Oceania">Oceania</option>
   </select>
   <span (click)="getAllCountries()">
-    <i class="icofont-ui-search"></i>
+    <!-- <i class="ion-ios-search-strong"></i> -->
+    <span class="material-icons">search</span>
   </span>  
 </div>
 
