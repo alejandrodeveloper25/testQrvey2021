@@ -1,0 +1,61 @@
+<label class="title">Find any <span>country</span> in the world.</label>
+<img class="img-bg" src="../../../assets/Rectangle 300.png">
+<div class="txt-filter">
+  <input class="" type="text" placeholder="Search country" [(ngModel)]="filterName">
+  <select [(ngModel)]="selectFilter">
+      <option value="">Show All</option>
+      <option value="Fav">Favorites</option>
+      <option value="Africa">Africa</option>
+      <option value="Americas">America</option>
+      <option value="Asia">Asia</option>
+      <option value="Europe">Europe</option>
+      <option value="Oceania">Oceania</option>
+  </select>
+  <span (click)="getAllCountries()">
+    <i class="icofont-ui-search"></i>
+  </span>  
+</div>
+
+<div class="container-countries">
+    <div class="col" *ngIf="selectFilter == '' || selectFilter == 'Africa'">
+        <label class="sub-title">Africa</label>
+        <br><br>
+        <div class="country" *ngFor="let i of ListAfricaCountries | appFilterName: filterName | orderBy:'name'">
+            <img  src="{{i.flag}}">
+            <label>{{i.name}}</label>
+        </div>
+    </div>
+    <div class="col"*ngIf="selectFilter == '' || selectFilter == 'Americas'" >
+      <label class="sub-title">America</label>
+      <br><br>
+        <div class="country" *ngFor="let i of listAmericaCountries | appFilterName: filterName | orderBy:'name'">
+            <img  src="{{i.flag}}">
+            <label>{{i.name}}</label>
+        </div>
+  </div>
+  <div class="col" *ngIf="selectFilter == '' || selectFilter == 'Asia'">
+      <label class="sub-title">Asia</label>
+      <br><br>
+        <div class="country" *ngFor="let i of listAsiaCountries | appFilterName: filterName | orderBy:'name'">
+            <img  src="{{i.flag}}">
+            <label>{{i.name}}</label>
+        </div>
+  </div>
+  <div class="col" *ngIf="selectFilter == '' || selectFilter == 'Europe'">
+      <label class="sub-title">Europa</label>
+      <br><br>
+        <div class="country" *ngFor="let i of listEuropaCountries | appFilterName: filterName | orderBy:'name'">
+            <img  src="{{i.flag}}">
+            <label>{{i.name}}</label>
+        </div>
+  </div>
+  <div class="col" *ngIf="selectFilter == '' || selectFilter == 'Oceania'">
+      <label class="sub-title">Oceania</label>
+      <br><br>
+        <div class="country" *ngFor="let i of listOceaniaCountries | appFilterName: filterName | orderBy:'name'">
+            <img  src="{{i.flag}}">
+            <label>{{i.name}}</label>
+        </div>
+  </div>
+</div>
+

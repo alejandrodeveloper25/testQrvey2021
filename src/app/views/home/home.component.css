@@ -1,0 +1,103 @@
+.title {
+  color: #09295E;
+  font-size: 50px;
+  font-weight: 700;
+  width: 386px;
+  float: left;
+  margin-top: 157px;
+  margin-left: 50px;
+}
+
+.title>span {
+  color: #21ADCF;
+}
+
+.img-bg {
+  position: absolute;
+  right: 0;
+}
+
+.txt-filter {
+  position: absolute;
+  width: 700px;
+  height: 70px;
+  left: 50px;
+  top: 295px;
+  background: #FFFFFF;
+  border: 1px solid #E0E0E0;
+  box-sizing: border-box;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  border-radius: 10px;
+}
+
+.txt-filter>input{
+    float: left;
+    width: 460px;
+    height: 49px;
+    border: none;
+    padding: 10px;
+    border-radius: 10px;
+    font-size: 19px;
+    font-weight: 400;
+    color: #C4C4C4;
+}
+
+.txt-filter>select{
+    float: left;
+    width: 148px;
+    height: 100%;
+    border: none;
+    padding: 10px;
+    font-size: 19px;
+    font-weight: 400;
+    color: #4F4F4F;
+    border-left: solid 1px #E0E0E0;
+}
+
+.txt-filter>span{
+    float: left;
+    width: 70px;
+    height: 100%;
+    background-color: #21ADCF;
+    color: white;
+    border-radius: 0px 9px 9px 0px;
+}
+
+.txt-filter>span>i{
+    width: 25px;
+    font-size: 25px;
+    top: 22.5px !important;
+    position: relative;
+    left: 22.5px
+}
+
+.container-countries{
+    padding-left: 50px;
+    padding-right: 50px;
+    width: 100%;
+    position: absolute;
+    top: 435px;
+}
+
+.container-countries>.col{
+    width: 20%;
+    float: left;
+}
+
+.col>.sub-title{
+    font-size: 20px;
+    font-weight: 700;
+    color: #09295E;
+    margin-bottom: 20px;
+}
+
+.country>img{
+    width: 18px;
+    margin-right: 10px;
+}
+
+.country>label{
+    font-size: 12px;
+    font-weight: 400;
+
+}
