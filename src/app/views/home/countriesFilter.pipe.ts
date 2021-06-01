@@ -6,23 +6,22 @@ import { Pipe, PipeTransform } from '@angular/core';
 
 export class CountriesFilterPipe implements PipeTransform {
 
-    transform(items: any[], searchText: string, ): any[] {
+    transform(items: any[], textFilter: string ): any[] {
         if (!items) {
           return [];
         }
-        if (!searchText && !searchText) {
+        if (!textFilter && !textFilter) {
           return items;
         }
     
-        if(searchText != undefined && searchText != null && searchText != ""){
-            searchText = searchText.toLocaleLowerCase();
+        if(textFilter != undefined && textFilter!= null && textFilter != ""){
+          textFilter = textFilter.toLocaleLowerCase();
         }else{
-            searchText = "";
+          textFilter = "";
         }
-    
         return items.filter(it => {
             if(it.name != undefined){
-                return (it.name.toLocaleLowerCase().includes(searchText));
+              return (it.name.toLocaleLowerCase().includes(textFilter)); 
             }
         });
       }

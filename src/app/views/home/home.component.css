@@ -74,9 +74,9 @@
 }
 
 .container-countries{
-    padding-left: 50px;
-    padding-right: 50px;
-    width: 100%;
+    padding-left: 5%;
+    padding-right: 5%;
+    width: 90%;
     position: absolute;
     top: 435px;
 }
@@ -86,7 +86,7 @@
     float: left;
 }
 
-.col>.sub-title{
+.col>div>.sub-title{
     font-size: 20px;
     font-weight: 700;
     color: #09295E;
@@ -111,4 +111,13 @@
     font-size: 14px;
     margin-left: 3px;
     cursor: pointer;
+}
+
+.lbl-not-result{
+    font-size: 30px;
+    font-weight: 500;
+    color: #BDBDBD;
+    position: relative;
+    top: 593px;
+    left: 169px;
 }

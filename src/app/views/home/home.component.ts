@@ -11,7 +11,9 @@ export class HomeComponent implements OnInit {
   constructor(private countryServices: CountryServicesService) { }
 
   filterName = "";
-  selectFilter = "";
+  selectFilter = "0";
+
+  applyFav = false;
 
   listAllCountries : any[] =[];
 
@@ -61,6 +63,36 @@ export class HomeComponent implements OnInit {
   activeModal = false;
   selectCountry :any;
 
+  resultAfr = 0;
+  resultAme = 0;
+  resultAsi = 0;
+  resultEur = 0;
+  resultOce = 0;
+
+  validateFavList(list:any[]){
+    let count = 0;
+    list.forEach(item => {
+      if(item.fav != undefined && item.fav != null && item.fav){
+        count ++;
+      }
+    });
+    return count;
+  }
+
+  searchFav(option:string){
+    if(option != "1"){
+      this.applyFav = false;
+    }else{
+      console.log("sss")
+      this.applyFav = true;
+      this.resultAfr = this.validateFavList(this.ListAfricaCountries);
+      this.resultAme = this.validateFavList(this.listAmericaCountries);
+      this.resultAsi = this.validateFavList(this.listAsiaCountries);
+      this.resultEur = this.validateFavList(this.listEuropaCountries);
+      this.resultOce = this.validateFavList(this.listOceaniaCountries);
+    }
+  }
+
   closeM(){
     this.activeModal = false;
   }
@@ -109,7 +141,6 @@ export class HomeComponent implements OnInit {
     this.selectCountry.population = this.getPopulationString(this.selectCountry.population);
 
     this.selectCountry.borders = this.getBorderCountries(this.selectCountry.borders);
-    console.log(this.selectCountry);
   }
 
   selectFavoriteCountry(e:any){

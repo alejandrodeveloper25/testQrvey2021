@@ -5,8 +5,8 @@
         </div>
         
         <label class="name-c">{{countrySelected.name}}</label>
-        <span class="material-icons star" (click) = "actionFavorite(true)" *ngIf="!countrySelected.fav">star_border</span>
-        <span class="material-icons star" (click) = "actionFavorite(false)" *ngIf="countrySelected.fav">star</span>
+        <span style="cursor: pointer;"  class="material-icons star" (click) = "actionFavorite(true)" *ngIf="!countrySelected.fav">star_border</span>
+        <span style="color: #F2C94C; cursor: pointer;"  class="material-icons star" (click) = "actionFavorite(false)" *ngIf="countrySelected.fav">star</span>
         <br>
         <label class="txt-dtl"><span>Region:</span> {{countrySelected.region}}</label>
         <br>
