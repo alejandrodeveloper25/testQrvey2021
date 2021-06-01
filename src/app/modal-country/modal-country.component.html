@@ -1,0 +1,27 @@
+<div [ngClass]="{'modal-active': activeModal, 'modal-inactive' : !activeModal}">
+    <div class="modal-contenido">
+        <div class="btn-close">
+            <span class="material-icons" (click)="close()">close</span>
+        </div>
+        
+        <label class="name-c">{{countrySelected.name}}</label>
+        <span class="material-icons star" (click) = "actionFavorite(true)" *ngIf="!countrySelected.fav">star_border</span>
+        <span class="material-icons star" (click) = "actionFavorite(false)" *ngIf="countrySelected.fav">star</span>
+        <br>
+        <label class="txt-dtl"><span>Region:</span> {{countrySelected.region}}</label>
+        <br>
+        <label class="txt-dtl"><span>Population:</span> {{countrySelected.population}}</label>
+        <br>
+        <label class="txt-dtl"><span>Capital:</span> {{countrySelected.capital}}</label>
+        <br>
+        <label class="txt-dtl"><span>Currency:</span></label><label class="txt-dtl"  *ngFor="let curency of countrySelected.currencies">{{curency.name}} </label>
+        <br>
+        <label class="txt-dtl"><span>Language:</span></label> <label class="txt-dtl"  *ngFor="let language of countrySelected.languages">{{language.nativeName}} </label>
+        <br>
+        <label class="txt-dtl"><span>Border Countries:</span> {{countrySelected.borders}}</label>
+        <br>
+        <label class="txt-dtl"><span>Flag:</span></label>
+        <br>
+        <img class="flag" src="{{countrySelected.flag}}">
+    </div>
+</div>

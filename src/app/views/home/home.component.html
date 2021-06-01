@@ -1,62 +1,82 @@
 <label class="title">Find any <span>country</span> in the world.</label>
-<img class="img-bg" src="https://s3-alpha-sig.figma.com/img/14cf/8738/d87d84c21b318297becaea64af3a7256?Expires=1623628800&Signature=X3vEV~V3qiSSLIZ4IMugbvyPbsjQ7x3NUXhpRASnwGTm6bgtcqU0VCyybQayXUZq6lardQnGBgb5VleP0OahbmBE-CF2owZT283IwH02sA4EP65ftOY6IPKVT0DklPfHwYcjruvicX6Zhq5ixSfDtXdoCP5ODgio8rBRNJc43s0qlWM5tD0NQNm13qzmdrO1c8mhLq4nQ6gb-E7ERIWpc3ylrkSslJIWybXyIXQpg5wyPAZ3HhYeDISVMAw75TopWz~tHYQJK6kPpvQnj~9nYIESWrInGwEhxCJg~2pJUB7x4RjPEc4puh8Lwi46mv0oYl-uXv1~IOUwK6nROTZgjA__&Key-Pair-Id=APKAINTVSUGEWH5XD5UA">
+<img class="img-bg"
+  src="https://s3-alpha-sig.figma.com/img/14cf/8738/d87d84c21b318297becaea64af3a7256?Expires=1623628800&Signature=X3vEV~V3qiSSLIZ4IMugbvyPbsjQ7x3NUXhpRASnwGTm6bgtcqU0VCyybQayXUZq6lardQnGBgb5VleP0OahbmBE-CF2owZT283IwH02sA4EP65ftOY6IPKVT0DklPfHwYcjruvicX6Zhq5ixSfDtXdoCP5ODgio8rBRNJc43s0qlWM5tD0NQNm13qzmdrO1c8mhLq4nQ6gb-E7ERIWpc3ylrkSslJIWybXyIXQpg5wyPAZ3HhYeDISVMAw75TopWz~tHYQJK6kPpvQnj~9nYIESWrInGwEhxCJg~2pJUB7x4RjPEc4puh8Lwi46mv0oYl-uXv1~IOUwK6nROTZgjA__&Key-Pair-Id=APKAINTVSUGEWH5XD5UA">
 <div class="txt-filter">
   <input class="" type="text" placeholder="Search country" [(ngModel)]="filterName">
   <select [(ngModel)]="selectFilter">
-      <option value="">Show All</option>
-      <option value="Fav">Favorites</option>
-      <option value="Africa">Africa</option>
-      <option value="Americas">America</option>
-      <option value="Asia">Asia</option>
-      <option value="Europe">Europe</option>
-      <option value="Oceania">Oceania</option>
+    <option value="">Show All</option>
+    <option value="Fav">Favorites</option>
+    <option value="Africa">Africa</option>
+    <option value="Americas">America</option>
+    <option value="Asia">Asia</option>
+    <option value="Europe">Europe</option>
+    <option value="Oceania">Oceania</option>
   </select>
   <span (click)="getAllCountries()">
     <!-- <i class="ion-ios-search-strong"></i> -->
     <span class="material-icons">search</span>
-  </span>  
+  </span>
 </div>
 
 <div class="container-countries">
-    <div class="col" *ngIf="selectFilter == '' || selectFilter == 'Africa'">
-        <label class="sub-title">Africa</label>
-        <br><br>
-        <div class="country" *ngFor="let i of ListAfricaCountries | appFilterName: filterName | orderBy:'name'">
-            <img  src="{{i.flag}}">
-            <label>{{i.name}}</label>
-        </div>
+  <div class="col" *ngIf="selectFilter == '' || selectFilter == 'Africa'">
+    <label class="sub-title">Africa</label>
+    <br><br>
+    <div class="country" *ngFor="let i of ListAfricaCountries | appFilterName: filterName | orderBy:'name'">
+      <div *ngIf="selectFilter == '' || selectFilter == 'Africa' || selectFilter == 'Fav'" (click) = "selectedCountry(i)">
+        <img src="{{i.flag}}">
+        <label>{{i.name}}</label>
+        <span *ngIf="i.fav == true" class="material-icons">star_rate</span>
+      </div>
     </div>
-    <div class="col"*ngIf="selectFilter == '' || selectFilter == 'Americas'" >
-      <label class="sub-title">America</label>
-      <br><br>
-        <div class="country" *ngFor="let i of listAmericaCountries | appFilterName: filterName | orderBy:'name'">
-            <img  src="{{i.flag}}">
-            <label>{{i.name}}</label>
-        </div>
+  </div>
+  <div class="col" *ngIf="selectFilter == '' || selectFilter == 'Americas'">
+    <label class="sub-title">America</label>
+    <br><br>
+    <div class="country" *ngFor="let i of listAmericaCountries | appFilterName: filterName | orderBy:'name'">
+      <div *ngIf="selectFilter == '' || selectFilter == 'Americas' || selectFilter == 'Fav'" (click) = "selectedCountry(i)">
+        <img src="{{i.flag}}">
+        <label>{{i.name}}</label>
+        <span *ngIf="i.fav == true" class="material-icons">star_rate</span>
+      </div>
+    </div>
   </div>
   <div class="col" *ngIf="selectFilter == '' || selectFilter == 'Asia'">
-      <label class="sub-title">Asia</label>
-      <br><br>
-        <div class="country" *ngFor="let i of listAsiaCountries | appFilterName: filterName | orderBy:'name'">
-            <img  src="{{i.flag}}">
-            <label>{{i.name}}</label>
-        </div>
+    <label class="sub-title">Asia</label>
+    <br><br>
+    <div class="country" *ngFor="let i of listAsiaCountries | appFilterName: filterName | orderBy:'name'">
+      <div *ngIf="selectFilter == '' || selectFilter == 'Asia' || selectFilter == 'Fav'" (click) = "selectedCountry(i)">
+        <img src="{{i.flag}}">
+        <label>{{i.name}}</label>
+        <span *ngIf="i.fav == true" class="material-icons">star_rate</span>
+      </div>
+    </div>
   </div>
   <div class="col" *ngIf="selectFilter == '' || selectFilter == 'Europe'">
-      <label class="sub-title">Europa</label>
-      <br><br>
-        <div class="country" *ngFor="let i of listEuropaCountries | appFilterName: filterName | orderBy:'name'">
-            <img  src="{{i.flag}}">
-            <label>{{i.name}}</label>
-        </div>
+    <label class="sub-title">Europa</label>
+    <br><br>
+    <div class="country" *ngFor="let i of listEuropaCountries | appFilterName: filterName | orderBy:'name'">
+      <div *ngIf="selectFilter == '' || selectFilter == 'Europe' || selectFilter == 'Fav'" (click) = "selectedCountry(i)">
+        <img src="{{i.flag}}">
+        <label>{{i.name}}</label>
+        <span *ngIf="i.fav == true" class="material-icons">star_rate</span>
+      </div>
+    </div>
   </div>
-  <div class="col" *ngIf="selectFilter == '' || selectFilter == 'Oceania'">
-      <label class="sub-title">Oceania</label>
-      <br><br>
-        <div class="country" *ngFor="let i of listOceaniaCountries | appFilterName: filterName | orderBy:'name'">
-            <img  src="{{i.flag}}">
-            <label>{{i.name}}</label>
-        </div>
+  <div class="col" *ngIf="selectFilter == '' || selectFilter == 'Oceania' || selectFilter == 'Fav'">
+    <label class="sub-title">Oceania</label>
+    <br><br>
+    <div class="country" *ngFor="let i of listOceaniaCountries | appFilterName: filterName | orderBy:'name'">
+      <div *ngIf="selectFilter == '' || selectFilter == 'Oceania' || selectFilter == 'Fav'" (click) = "selectedCountry(i)">
+        <img src="{{i.flag}}">
+        <label>{{i.name}}</label>
+        <span *ngIf="i.fav == true" class="material-icons">star_rate</span>
+      </div>
+    </div>
   </div>
 </div>
 
+<app-modal-country [activeModal] = "activeModal"  
+[countrySelected] = "selectCountry" 
+(closeModal) = "closeM()"
+(activeFavorite) = "selectFavoriteCountry($event)"></app-modal-country>

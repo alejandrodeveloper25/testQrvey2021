@@ -93,13 +93,22 @@
     margin-bottom: 20px;
 }
 
-.country>img{
+
+.country>div>img{
     width: 18px;
     margin-right: 10px;
+    cursor: pointer;
 }
 
-.country>label{
+.country>div>label{
     font-size: 12px;
     font-weight: 400;
+    cursor: pointer;
+}
 
+.country>div>span{
+    color: #F2C94C;
+    font-size: 14px;
+    margin-left: 3px;
+    cursor: pointer;
 }

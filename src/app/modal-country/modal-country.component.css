@@ -1,0 +1,86 @@
+.btn-close{
+    color: #BDBDBD;
+    float: right;
+    margin-top: 30px;
+    margin-right: 30px;
+    cursor: pointer;
+}
+
+.name-c{
+    font-weight: 500;
+    font-size: 40px;
+    color: #09295E; 
+    position: relative;
+    top: 50px;
+    left: 50px;
+    margin-bottom: 15px;
+}
+
+.txt-dtl{
+    color: #4F4F4F;
+    font-size: 20px;
+    font-weight: 400;
+    position: relative;
+    top: 15%;
+    left: 50px;
+}
+
+.txt-dtl>span{
+    font-weight: 500;
+}
+
+.flag{
+    width: 181px;
+    position: relative;
+    left: 50px;
+    top: 17%;
+}
+
+.star{
+    position: relative;
+    width: 40px;
+    height: 40px;
+    left: 7%;
+    top: 11%;
+    font-size: 40px;
+}
+
+.modal-contenido {
+  background-color: white;
+  position: relative;
+  height: 506px;
+  width: 60%;
+  left: 20%;
+  top: 20%;
+  border-radius: 10px;
+  overflow-x: auto;
+
+}
+
+.modal-active {
+  background-color: #71a8ffad;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  opacity: 0;
+  pointer-events: stroke;
+  transition: all 1s;
+  opacity: 1;
+  pointer-events: stroke
+}
+
+.modal-inactive {
+  background-color: #71a8ffad;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  opacity: 0;
+  pointer-events: stroke;
+  transition: all 1s;
+  opacity: 0;
+  pointer-events: none
+}

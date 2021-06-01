@@ -10,13 +10,15 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './views/home/home.component';
 import { from } from 'rxjs';
+import { ModalCountryComponent } from './modal-country/modal-country.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     CountriesFilterPipe,
-    CountriesOrderPipe
+    CountriesOrderPipe,
+    ModalCountryComponent
   ],
   imports: [
     BrowserModule,
