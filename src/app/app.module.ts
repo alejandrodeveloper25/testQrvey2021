@@ -3,14 +3,14 @@ import { BrowserModule } from '@angular/platform-browser';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 
-import { CountriesFilterPipe } from '../app/views/home/countriesFilter.pipe';
-import { CountriesOrderPipe } from '../app/views/home/CountriesOrder.pipe';
+import { CountriesFilterPipe } from '../app/pipes/countriesFilter.pipe';
+import { CountriesOrderPipe } from '../app/pipes/CountriesOrder.pipe';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './views/home/home.component';
 import { from } from 'rxjs';
-import { ModalCountryComponent } from './modal-country/modal-country.component';
+import { ModalCountryComponent } from './components/modal-country/modal-country.component';
 
 @NgModule({
   declarations: [
