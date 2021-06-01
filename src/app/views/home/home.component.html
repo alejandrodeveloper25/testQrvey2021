@@ -120,7 +120,7 @@
 </div>
 
 <div *ngIf="(listAllCountries | appFilterName: filterName) as result">
-  <label class="lbl-not-result" *ngIf="result.length == 0">No results found</label>
+  <label class="lbl-not-result" *ngIf="result.length == 0 || ((resultAfr == 0 && resultAme == 0 && resultAsi == 0 && resultEur == 0 && resultOce == 0) && applyFav)">No results found</label>
 </div>
 
 <app-modal-country [activeModal] = "activeModal"  
